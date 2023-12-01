@@ -1,18 +1,14 @@
 /* eslint-disable no-console */
 import React from 'react';
-import { createRoot } from 'react-dom/client';
-import App from './App';
+import ReactDOM from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
+import routes from './main.routes';
 
-// Dump environment
-console.log(import.meta.env);
+const router = createBrowserRouter(routes);
 
-// Render App
-// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-const container = document.getElementById('root')!;
-const root = createRoot(container);
-root.render(
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>,
 );
