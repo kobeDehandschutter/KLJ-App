@@ -1,11 +1,11 @@
 import React from 'react';
 import { RouteObject } from 'react-router-dom';
 import Home from './pages/home';
+import IkDrink from './pages/ikDrink';
+import Rekening from './pages/rekening';
+import Settings from './pages/settings';
+import WijDrinken from './pages/wijDrinken';
 
-const IkDrink = () => <h1>ikDrink</h1>;
-const WijDrinken = () => <h1>WijDrinken</h1>;
-const Rekening = () => <h1>Rekening</h1>;
-const Settings = () => <h1>Settings</h1>;
 const NotFound = () => <h1>NotFound</h1>;
 
 const routes: RouteObject[] = [
