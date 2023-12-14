@@ -8,8 +8,12 @@
     ".NETCoreApp,Version=v6.0": {
       "apiExample/1.0.0": {
         "dependencies": {
+          "Google.Apis.Auth": "1.64.0",
+          "Google.Apis.Sheets.v4": "1.64.0.3148",
           "Microsoft.AspNetCore.Cors": "2.2.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.8"
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.8",
+          "Microsoft.Office.Interop.Excel": "15.0.4795.1001",
+          "System.Data.OleDb": "8.0.0"
         },
         "runtime": {
           "apiExample.dll": {}
@@ -38,7 +42,7 @@
           "Microsoft.Identity.Client": "4.45.0",
           "Microsoft.Identity.Client.Extensions.Msal": "2.19.3",
           "System.Memory": "4.5.4",
-          "System.Security.Cryptography.ProtectedData": "5.0.0",
+          "System.Security.Cryptography.ProtectedData": "8.0.0",
           "System.Text.Json": "4.7.2",
           "System.Threading.Tasks.Extensions": "4.5.4"
         },
@@ -46,6 +50,57 @@
           "lib/netstandard2.0/Azure.Identity.dll": {
             "assemblyVersion": "1.6.0.0",
             "fileVersion": "1.600.22.20503"
+          }
+        }
+      },
+      "Google.Apis/1.64.0": {
+        "dependencies": {
+          "Google.Apis.Core": "1.64.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.dll": {
+            "assemblyVersion": "1.64.0.0",
+            "fileVersion": "1.64.0.0"
+          }
+        }
+      },
+      "Google.Apis.Auth/1.64.0": {
+        "dependencies": {
+          "Google.Apis": "1.64.0",
+          "Google.Apis.Core": "1.64.0",
+          "System.Management": "7.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.Auth.PlatformServices.dll": {
+            "assemblyVersion": "1.64.0.0",
+            "fileVersion": "1.64.0.0"
+          },
+          "lib/netstandard2.0/Google.Apis.Auth.dll": {
+            "assemblyVersion": "1.64.0.0",
+            "fileVersion": "1.64.0.0"
+          }
+        }
+      },
+      "Google.Apis.Core/1.64.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.Core.dll": {
+            "assemblyVersion": "1.64.0.0",
+            "fileVersion": "1.64.0.0"
+          }
+        }
+      },
+      "Google.Apis.Sheets.v4/1.64.0.3148": {
+        "dependencies": {
+          "Google.Apis": "1.64.0",
+          "Google.Apis.Auth": "1.64.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.Sheets.v4.dll": {
+            "assemblyVersion": "1.64.0.3148",
+            "fileVersion": "1.64.0.3148"
           }
         }
       },
@@ -96,7 +151,7 @@
           "Microsoft.SqlServer.Server": "1.0.0",
           "Microsoft.Win32.Registry": "5.0.0",
           "System.Buffers": "4.5.1",
-          "System.Configuration.ConfigurationManager": "5.0.0",
+          "System.Configuration.ConfigurationManager": "8.0.0",
           "System.Diagnostics.DiagnosticSource": "5.0.0",
           "System.IO": "4.3.0",
           "System.Resources.ResourceManager": "4.3.0",
@@ -319,7 +374,7 @@
       "Microsoft.Identity.Client.Extensions.Msal/2.19.3": {
         "dependencies": {
           "Microsoft.Identity.Client": "4.45.0",
-          "System.Security.Cryptography.ProtectedData": "5.0.0"
+          "System.Security.Cryptography.ProtectedData": "8.0.0"
         },
         "runtime": {
           "lib/netcoreapp2.1/Microsoft.Identity.Client.Extensions.Msal.dll": {
@@ -403,6 +458,14 @@
       },
       "Microsoft.NETCore.Platforms/5.0.0": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
+      "Microsoft.Office.Interop.Excel/15.0.4795.1001": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Office.Interop.Excel.dll": {
+            "assemblyVersion": "15.0.0.0",
+            "fileVersion": "15.0.4795.1000"
+          }
+        }
+      },
       "Microsoft.SqlServer.Server/1.0.0": {
         "runtime": {
           "lib/netstandard2.0/Microsoft.SqlServer.Server.dll": {
@@ -417,61 +480,71 @@
           "System.Security.Principal.Windows": "5.0.0"
         }
       },
-      "Microsoft.Win32.SystemEvents/5.0.0": {
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "5.0.0"
-        },
+      "Newtonsoft.Json/13.0.3": {
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.20.51904"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll": {
-            "rid": "win",
-            "assetType": "runtime",
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.20.51904"
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.3.27908"
           }
         }
       },
       "System.Buffers/4.5.1": {},
-      "System.Configuration.ConfigurationManager/5.0.0": {
+      "System.CodeDom/7.0.0": {
+        "runtime": {
+          "lib/net6.0/System.CodeDom.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
+      "System.Configuration.ConfigurationManager/8.0.0": {
         "dependencies": {
-          "System.Security.Cryptography.ProtectedData": "5.0.0",
-          "System.Security.Permissions": "5.0.0"
+          "System.Security.Cryptography.ProtectedData": "8.0.0"
         },
         "runtime": {
-          "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll": {
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.20.51904"
+          "lib/net6.0/System.Configuration.ConfigurationManager.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
+      "System.Data.OleDb/8.0.0": {
+        "dependencies": {
+          "System.Configuration.ConfigurationManager": "8.0.0",
+          "System.Diagnostics.PerformanceCounter": "8.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.Data.OleDb.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net6.0/System.Data.OleDb.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
           }
         }
       },
       "System.Diagnostics.DiagnosticSource/5.0.0": {},
-      "System.Drawing.Common/5.0.0": {
+      "System.Diagnostics.PerformanceCounter/8.0.0": {
         "dependencies": {
-          "Microsoft.Win32.SystemEvents": "5.0.0"
+          "System.Configuration.ConfigurationManager": "8.0.0"
         },
         "runtime": {
-          "lib/netcoreapp3.0/System.Drawing.Common.dll": {
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.20.51904"
+          "lib/net6.0/System.Diagnostics.PerformanceCounter.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
           }
         },
         "runtimeTargets": {
-          "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll": {
-            "rid": "unix",
-            "assetType": "runtime",
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.20.51904"
-          },
-          "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll": {
+          "runtimes/win/lib/net6.0/System.Diagnostics.PerformanceCounter.dll": {
             "rid": "win",
             "assetType": "runtime",
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.20.51904"
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
           }
         }
       },
@@ -502,6 +575,25 @@
           "System.Runtime": "4.3.0",
           "System.Text.Encoding": "4.3.0",
           "System.Threading.Tasks": "4.3.0"
+        }
+      },
+      "System.Management/7.0.2": {
+        "dependencies": {
+          "System.CodeDom": "7.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.Management.dll": {
+            "assemblyVersion": "7.0.0.2",
+            "fileVersion": "7.0.723.27404"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net6.0/System.Management.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "7.0.0.2",
+            "fileVersion": "7.0.723.27404"
+          }
         }
       },
       "System.Memory/4.5.4": {},
@@ -551,7 +643,7 @@
       },
       "System.Runtime.Caching/5.0.0": {
         "dependencies": {
-          "System.Configuration.ConfigurationManager": "5.0.0"
+          "System.Configuration.ConfigurationManager": "8.0.0"
         },
         "runtime": {
           "lib/netstandard2.0/System.Runtime.Caching.dll": {
@@ -580,31 +672,11 @@
           "System.Formats.Asn1": "5.0.0"
         }
       },
-      "System.Security.Cryptography.ProtectedData/5.0.0": {
+      "System.Security.Cryptography.ProtectedData/8.0.0": {
         "runtime": {
-          "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.20.51904"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
-            "rid": "win",
-            "assetType": "runtime",
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.20.51904"
-          }
-        }
-      },
-      "System.Security.Permissions/5.0.0": {
-        "dependencies": {
-          "System.Security.AccessControl": "5.0.0",
-          "System.Windows.Extensions": "5.0.0"
-        },
-        "runtime": {
-          "lib/net5.0/System.Security.Permissions.dll": {
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.20.51904"
+          "lib/net6.0/System.Security.Cryptography.ProtectedData.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
           }
         }
       },
@@ -630,26 +702,7 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.Threading.Tasks.Extensions/4.5.4": {},
-      "System.Windows.Extensions/5.0.0": {
-        "dependencies": {
-          "System.Drawing.Common": "5.0.0"
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/System.Windows.Extensions.dll": {
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.20.51904"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll": {
-            "rid": "win",
-            "assetType": "runtime",
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.20.51904"
-          }
-        }
-      }
+      "System.Threading.Tasks.Extensions/4.5.4": {}
     }
   },
   "libraries": {
@@ -671,6 +724,34 @@
       "sha512": "sha512-EycyMsb6rD2PK9P0SyibFfEhvWWttdrYhyPF4f41uzdB/44yQlV+2Wehxyg489Rj6gbPvSPgbKq0xsHJBhipZA==",
       "path": "azure.identity/1.6.0",
       "hashPath": "azure.identity.1.6.0.nupkg.sha512"
+    },
+    "Google.Apis/1.64.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0ki3AJDiTuV5Cb7NUyq+0DDGDLWcPCKbZC1HgyvAW+o/I0rY/HXMvv6IAF65hhfbQB/Scfm8nuAW3weNEXYkxw==",
+      "path": "google.apis/1.64.0",
+      "hashPath": "google.apis.1.64.0.nupkg.sha512"
+    },
+    "Google.Apis.Auth/1.64.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-u3cwX0E3IpAkROzRPgZtohFSS2DUblkSmwMfh3/2Qwbi/QXHd8ebq2JuCNqmfpJyfgW5AG0+fO0UrrLsYtglMQ==",
+      "path": "google.apis.auth/1.64.0",
+      "hashPath": "google.apis.auth.1.64.0.nupkg.sha512"
+    },
+    "Google.Apis.Core/1.64.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bqrUhDeMFeMdjtv4QT4Z99WDPSEbS6EKnp1bYvqyc/VpEu4oFNMqw8/bk/7SS7Ko+bodDgum8fkvDwCMZtdWDg==",
+      "path": "google.apis.core/1.64.0",
+      "hashPath": "google.apis.core.1.64.0.nupkg.sha512"
+    },
+    "Google.Apis.Sheets.v4/1.64.0.3148": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5BFNlAQO1yjBtjRhKDp4UaA0XmCWIpS7sDNuc1my5jzvGpdbFlHB5uMSuBwXKsSopk2t/lzVDb2hH0fkNCengQ==",
+      "path": "google.apis.sheets.v4/1.64.0.3148",
+      "hashPath": "google.apis.sheets.v4.1.64.0.3148.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cors/2.2.0": {
       "type": "package",
@@ -910,6 +991,13 @@
       "path": "microsoft.netcore.targets/1.1.0",
       "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
     },
+    "Microsoft.Office.Interop.Excel/15.0.4795.1001": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cuvqi/U5MYSM0gvR2l90q0m/urRgmg69EiwP5VWp1RcaJ0YT5G26Va5LaOZ3KJFc22FNihS5CUjeePUp2YpGQA==",
+      "path": "microsoft.office.interop.excel/15.0.4795.1001",
+      "hashPath": "microsoft.office.interop.excel.15.0.4795.1001.nupkg.sha512"
+    },
     "Microsoft.SqlServer.Server/1.0.0": {
       "type": "package",
       "serviceable": true,
@@ -924,12 +1012,12 @@
       "path": "microsoft.win32.registry/5.0.0",
       "hashPath": "microsoft.win32.registry.5.0.0.nupkg.sha512"
     },
-    "Microsoft.Win32.SystemEvents/5.0.0": {
+    "Newtonsoft.Json/13.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Bh6blKG8VAKvXiLe2L+sEsn62nc1Ij34MrNxepD2OCrS5cpCwQa9MeLyhVQPQ/R4Wlzwuy6wMK8hLb11QPDRsQ==",
-      "path": "microsoft.win32.systemevents/5.0.0",
-      "hashPath": "microsoft.win32.systemevents.5.0.0.nupkg.sha512"
+      "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "path": "newtonsoft.json/13.0.3",
+      "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
     },
     "System.Buffers/4.5.1": {
       "type": "package",
@@ -938,12 +1026,26 @@
       "path": "system.buffers/4.5.1",
       "hashPath": "system.buffers.4.5.1.nupkg.sha512"
     },
-    "System.Configuration.ConfigurationManager/5.0.0": {
+    "System.CodeDom/7.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-aM7cbfEfVNlEEOj3DsZP+2g9NRwbkyiAv2isQEzw7pnkDg9ekCU2m1cdJLM02Uq691OaCS91tooaxcEn8d0q5w==",
-      "path": "system.configuration.configurationmanager/5.0.0",
-      "hashPath": "system.configuration.configurationmanager.5.0.0.nupkg.sha512"
+      "sha512": "sha512-GLltyqEsE5/3IE+zYRP5sNa1l44qKl9v+bfdMcwg+M9qnQf47wK3H0SUR/T+3N4JEQXF3vV4CSuuo0rsg+nq2A==",
+      "path": "system.codedom/7.0.0",
+      "hashPath": "system.codedom.7.0.0.nupkg.sha512"
+    },
+    "System.Configuration.ConfigurationManager/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JlYi9XVvIREURRUlGMr1F6vOFLk7YSY4p1vHo4kX3tQ0AGrjqlRWHDi66ImHhy6qwXBG3BJ6Y1QlYQ+Qz6Xgww==",
+      "path": "system.configuration.configurationmanager/8.0.0",
+      "hashPath": "system.configuration.configurationmanager.8.0.0.nupkg.sha512"
+    },
+    "System.Data.OleDb/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FpUTcQ0E8mFvcYp8UZA3NX8wgmhmsCue56g1zfkr1xdOnT5FrYYmC5DWQ9xCw8o8zuxVBKLZvliqEGgmeoalaQ==",
+      "path": "system.data.oledb/8.0.0",
+      "hashPath": "system.data.oledb.8.0.0.nupkg.sha512"
     },
     "System.Diagnostics.DiagnosticSource/5.0.0": {
       "type": "package",
@@ -952,12 +1054,12 @@
       "path": "system.diagnostics.diagnosticsource/5.0.0",
       "hashPath": "system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512"
     },
-    "System.Drawing.Common/5.0.0": {
+    "System.Diagnostics.PerformanceCounter/8.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-SztFwAnpfKC8+sEKXAFxCBWhKQaEd97EiOL7oZJZP56zbqnLpmxACWA8aGseaUExciuEAUuR9dY8f7HkTRAdnw==",
-      "path": "system.drawing.common/5.0.0",
-      "hashPath": "system.drawing.common.5.0.0.nupkg.sha512"
+      "sha512": "sha512-lX6DXxtJqVGWw7N/QmVoiCyVQ+Q/Xp+jVXPr3gLK1jJExSn1qmAjJQeb8gnOYeeBTG3E3PmG1nu92eYj/TEjpg==",
+      "path": "system.diagnostics.performancecounter/8.0.0",
+      "hashPath": "system.diagnostics.performancecounter.8.0.0.nupkg.sha512"
     },
     "System.Formats.Asn1/5.0.0": {
       "type": "package",
@@ -986,6 +1088,13 @@
       "sha512": "sha512-3qjaHvxQPDpSOYICjUoTsmoq5u6QJAFRUITgeT/4gqkF1bajbSmb1kwSxEA8AHlofqgcKJcM8udgieRNhaJ5Cg==",
       "path": "system.io/4.3.0",
       "hashPath": "system.io.4.3.0.nupkg.sha512"
+    },
+    "System.Management/7.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/qEUN91mP/MUQmJnM5y5BdT7ZoPuVrtxnFlbJ8a3kBJGhe2wCzBfnPFtK2wTtEEcf3DMGR9J00GZZfg6HRI6yA==",
+      "path": "system.management/7.0.2",
+      "hashPath": "system.management.7.0.2.nupkg.sha512"
     },
     "System.Memory/4.5.4": {
       "type": "package",
@@ -1064,19 +1173,12 @@
       "path": "system.security.cryptography.cng/5.0.0",
       "hashPath": "system.security.cryptography.cng.5.0.0.nupkg.sha512"
     },
-    "System.Security.Cryptography.ProtectedData/5.0.0": {
+    "System.Security.Cryptography.ProtectedData/8.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-HGxMSAFAPLNoxBvSfW08vHde0F9uh7BjASwu6JF9JnXuEPhCY3YUqURn0+bQV/4UWeaqymmrHWV+Aw9riQCtCA==",
-      "path": "system.security.cryptography.protecteddata/5.0.0",
-      "hashPath": "system.security.cryptography.protecteddata.5.0.0.nupkg.sha512"
-    },
-    "System.Security.Permissions/5.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-uE8juAhEkp7KDBCdjDIE3H9R1HJuEHqeqX8nLX9gmYKWwsqk3T5qZlPx8qle5DPKimC/Fy3AFTdV7HamgCh9qQ==",
-      "path": "system.security.permissions/5.0.0",
-      "hashPath": "system.security.permissions.5.0.0.nupkg.sha512"
+      "sha512": "sha512-+TUFINV2q2ifyXauQXRwy4CiBhqvDEDZeVJU7qfxya4aRYOKzVBpN+4acx25VcPB9ywUN6C0n8drWl110PhZEg==",
+      "path": "system.security.cryptography.protecteddata/8.0.0",
+      "hashPath": "system.security.cryptography.protecteddata.8.0.0.nupkg.sha512"
     },
     "System.Security.Principal.Windows/5.0.0": {
       "type": "package",
@@ -1126,13 +1228,6 @@
       "sha512": "sha512-zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
       "path": "system.threading.tasks.extensions/4.5.4",
       "hashPath": "system.threading.tasks.extensions.4.5.4.nupkg.sha512"
-    },
-    "System.Windows.Extensions/5.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-c1ho9WU9ZxMZawML+ssPKZfdnrg/OjR3pe0m9v8230z3acqphwvPJqzAkH54xRYm5ntZHGG1EPP3sux9H3qSPg==",
-      "path": "system.windows.extensions/5.0.0",
-      "hashPath": "system.windows.extensions.5.0.0.nupkg.sha512"
     }
   }
 }

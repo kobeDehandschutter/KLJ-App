@@ -4,6 +4,12 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Reflection.Emit;
 using Microsoft.Extensions.DependencyInjection;
+using Excel = Microsoft.Office.Interop.Excel;
+using System.Runtime.InteropServices;
+using Google.Apis.Auth.OAuth2;
+using Google.Apis.Services;
+using Google.Apis.Sheets.v4;
+using Google.Apis.Sheets.v4.Data;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -40,7 +46,71 @@ if (app.Environment.IsDevelopment())
 app.UseCors();
 app.MapControllers();
 
-//app.MapGet("/", () => "Hello World!");
+app.MapGet("/excel", () =>
+{
+    string credentialsPath = "../klj-app-408112-5dd80f3e0960.json";
+
+    // Replace with the ID of your Google Sheets document
+    string spreadsheetId = "1bTQciQO-VBC007SxG3gqrmKY2Zv51VVvKgcZ_Qif_JM";
+
+    // Authenticate using credentials JSON file
+    var credential = GoogleCredential.FromFile(credentialsPath)
+        .CreateScoped(SheetsService.Scope.Spreadsheets);
+
+    // Create Google Sheets API service
+    var sheetsService = new SheetsService(new BaseClientService.Initializer()
+    {
+        HttpClientInitializer = credential,
+        ApplicationName = "KLJ-APP",
+    });
+
+    // Replace with the name of your sheet
+    string sheetName = "Dehandschutter Kobe";
+
+    // Specify the range you want to read
+    string range = $"{sheetName}";
+
+    // Read data from the specified range
+    var request = sheetsService.Spreadsheets.Values.Get(spreadsheetId, range);
+    var response = request.Execute();
+    var values = response.Values;
+
+    if (values != null && values.Count > 0)
+    {
+        var result = new List<List<string>>();
+
+        foreach (var row in values)
+        {
+            var formattedRow = row.Select(cell => cell.ToString()).ToList();
+            result.Add(formattedRow);
+        }
+
+        return Results.Ok(result);
+    }
+    else
+    {
+        return Results.Ok("No data found.");
+    }
+
+
+    //     var con = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\KobeD\Dropbox\My PC (LAPTOP-BJSR469K)\Documents\KLJ\Financieel hoofdleiding\2023-2024\feestweekend\betalingen-inschrijvingen.xlsx;Extended Properties='Excel8.0;HDR=Yes;IMEX=1';";
+    // #pragma warning disable CA1416 // Validate platform compatibility
+    //     using (OleDbConnection connection = new(con))
+    //     {
+    //         connection.Open();
+    //         OleDbCommand command = new("select * from [Sheet1$]", connection);
+    //         using (OleDbDataReader dr = command.ExecuteReader())
+    //         {
+    //             while (dr.Read())
+    //             {
+    //                 var row1col0 = dr[0];
+    //                 System.Console.WriteLine(row1col0);
+    //             }
+    //         }
+    //     }
+    // #pragma warning restore CA1416 // Validate platform compatibility
+
+});
 //app.MapPost("/factuur", async (PersonenContext context, Factuur factuur, CancellationToken ct) =>
 //{
 //    var klant = factuur.Persoon.PersoonId == 0 ? null : await context.Personen.FindAsync(factuur.Persoon.PersoonId);
@@ -65,14 +135,14 @@ app.MapGet("/", (PersonenContext context) =>
     //if (klant == null) return Results.NotFound($"Klant with voornaam {voornaam} was not found");
     var kobe = new Leiding
     {
-        id = 1,
+        Id = "1",
         Firstname = "Kobe",
         Lastname = "Dehandschutter"
 
     };
     var joren = new Leiding
     {
-        id = 2,
+        Id = "2",
         Firstname = "Joren",
         Lastname = "Cleppe"
     };
@@ -122,8 +192,9 @@ public class PersonenContext : DbContext
 [Table("Leiding", Schema = "KLJ")]
 public class Leiding
 {
-    public int id { get; set; }
+    public string Id { get; set; }
     public string? Firstname { get; set; }
     public string? Lastname { get; set; }
+    public string? Image { get; set; }
 
 }

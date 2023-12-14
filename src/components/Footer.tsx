@@ -1,16 +1,18 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
+import { userContext } from '@/contexts/userContext';
 import React from 'react';
 import { FaCog, FaHome } from 'react-icons/fa';
 import { RiBeerFill } from 'react-icons/ri';
 import { TbPigMoney } from 'react-icons/tb';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-const Footer = ({userId}: {userId: string}) => {
+const Footer = () => {
   const navigate = useNavigate();
   const { pathname  } = useLocation();
+  const user = React.useContext(userContext).user
 
   const onclick = (url: string) => {
-    navigate({pathname: url, search: `?id=${userId}`});
+    navigate({pathname: url, search: `?id=${user?.id}`});
   };
 
   return (

@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 export type Leiding = {
-  id: number,
+  id: string,
   firstname: string,
-  lastname: string
+  lastname: string,
+  image: string,
 }
 
 

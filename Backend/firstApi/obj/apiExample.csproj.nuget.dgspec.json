@@ -40,6 +40,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Google.Apis.Auth": {
+              "target": "Package",
+              "version": "[1.64.0, )"
+            },
+            "Google.Apis.Sheets.v4": {
+              "target": "Package",
+              "version": "[1.64.0.3148, )"
+            },
             "Microsoft.AspNetCore.Cors": {
               "target": "Package",
               "version": "[2.2.0, )"
@@ -47,6 +55,14 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[7.0.8, )"
+            },
+            "Microsoft.Office.Interop.Excel": {
+              "target": "Package",
+              "version": "[15.0.4795.1001, )"
+            },
+            "System.Data.OleDb": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             }
           },
           "imports": [

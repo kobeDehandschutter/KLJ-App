@@ -22,30 +22,9 @@ const Login = ({onclick}: {onclick: (id:string) => void} ) => {
 
     return (
         
-        <div className="flex gap-14 w-fit flex-wrap">
+        <div className="flex gap-5 w-fit flex-wrap m-4">
             {leiding?.map((l) => (
-            <LoginButton leiding={l} onclick={onclick}/>
-        ))}
-        {leiding?.map((l) => (
-            <LoginButton leiding={l} onclick={onclick}/>
-        ))}
-        {leiding?.map((l) => (
-            <LoginButton leiding={l} onclick={onclick}/>
-        ))}
-        {leiding?.map((l) => (
-            <LoginButton leiding={l} onclick={onclick}/>
-        ))}
-        {leiding?.map((l) => (
-            <LoginButton leiding={l} onclick={onclick}/>
-        ))}
-        {leiding?.map((l) => (
-            <LoginButton leiding={l} onclick={onclick}/>
-        ))}
-        {leiding?.map((l) => (
-            <LoginButton leiding={l} onclick={onclick}/>
-        ))}
-        {leiding?.map((l) => (
-            <LoginButton leiding={l} onclick={onclick}/>
+            <LoginButton key={l.id} leiding={l} onclick={onclick}/>
         ))}
         </div>
     );

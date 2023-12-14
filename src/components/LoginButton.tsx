@@ -8,8 +8,12 @@ const LoginButton = ({leiding, onclick}: {leiding: Leiding, onclick: (id:string)
 
     
     return (
-            <div key={leiding.id} className='h-16 w-40 rounded bg-white' onClick={() => onclick(leiding.id.toString())}>
-            <h1 className="">{leiding.firstname} {leiding.lastname}</h1>
+            <div key={leiding.id} className='w-20 h-20  rounded bg-white flex justify-between' onClick={() => onclick(leiding.id)}>
+            <div className="avatar">
+              <div className="w-20 h-20 rounded">
+                 <img  src={leiding.image} alt={leiding.firstname + " " + leiding.lastname} ></img>
+              </div>
+            </div>
             </div>
     );
 };
