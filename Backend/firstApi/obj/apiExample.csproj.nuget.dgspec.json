@@ -1,27 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "/Users/admin/git/MyFirstProject/firstApi/apiExample.csproj": {}
+    "C:\\Users\\KobeD\\DocumentsBuitenDropbox\\KLJ-APP\\KLJ-App\\Backend\\firstApi\\apiExample.csproj": {}
   },
   "projects": {
-    "/Users/admin/git/MyFirstProject/firstApi/apiExample.csproj": {
+    "C:\\Users\\KobeD\\DocumentsBuitenDropbox\\KLJ-APP\\KLJ-App\\Backend\\firstApi\\apiExample.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/admin/git/MyFirstProject/firstApi/apiExample.csproj",
+        "projectUniqueName": "C:\\Users\\KobeD\\DocumentsBuitenDropbox\\KLJ-APP\\KLJ-App\\Backend\\firstApi\\apiExample.csproj",
         "projectName": "apiExample",
-        "projectPath": "/Users/admin/git/MyFirstProject/firstApi/apiExample.csproj",
-        "packagesPath": "/Users/admin/.nuget/packages/",
-        "outputPath": "/Users/admin/git/MyFirstProject/firstApi/obj/",
+        "projectPath": "C:\\Users\\KobeD\\DocumentsBuitenDropbox\\KLJ-APP\\KLJ-App\\Backend\\firstApi\\apiExample.csproj",
+        "packagesPath": "C:\\Users\\KobeD\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\KobeD\\DocumentsBuitenDropbox\\KLJ-APP\\KLJ-App\\Backend\\firstApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/admin/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\KobeD\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/sdk/7.0.311/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
         },
         "frameworks": {
           "net6.0": {
@@ -39,6 +40,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[7.0.8, )"
@@ -63,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.311/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
