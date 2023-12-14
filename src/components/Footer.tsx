@@ -5,12 +5,12 @@ import { RiBeerFill } from 'react-icons/ri';
 import { TbPigMoney } from 'react-icons/tb';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-const Footer = () => {
+const Footer = ({userId}: {userId: string}) => {
   const navigate = useNavigate();
-  const { pathname } = useLocation();
+  const { pathname  } = useLocation();
 
   const onclick = (url: string) => {
-    navigate(url);
+    navigate({pathname: url, search: `?id=${userId}`});
   };
 
   return (

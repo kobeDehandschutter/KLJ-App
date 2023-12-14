@@ -5,29 +5,30 @@ import IkDrink from './pages/ikDrink';
 import Rekening from './pages/rekening';
 import Settings from './pages/settings';
 import WijDrinken from './pages/wijDrinken';
+import MainLayout from './layouts/mainLayout';
 
 const NotFound = () => <h1>NotFound</h1>;
 
 const routes: RouteObject[] = [
   {
     path: '/',
-    element: <Home />,
+    element: <MainLayout><Home /></MainLayout>,
   },
   {
     path: '/ikDrink',
-    element: <IkDrink />,
+    element: <MainLayout><IkDrink /></MainLayout>,
   },
   {
     path: '/wijDrinken',
-    element: <WijDrinken />,
+    element: <MainLayout><WijDrinken /></MainLayout>,
   },
   {
     path: '/rekening',
-    element: <Rekening />,
+    element: <MainLayout><Rekening /></MainLayout>,
   },
   {
     path: '/settings',
-    element: <Settings />,
+    element: <MainLayout><Settings /></MainLayout>,
   },
   {
     path: '/*',
