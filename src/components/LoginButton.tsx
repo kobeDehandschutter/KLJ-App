@@ -8,9 +8,9 @@ const LoginButton = ({leiding, onclick}: {leiding: Leiding, onclick: (id:string)
 
     
     return (
-            <div key={leiding.id} className='w-20 h-20  rounded bg-white flex justify-between' onClick={() => onclick(leiding.id)}>
+            <div key={leiding.id} className='w-20 h-20 md:w-40 md:h-40  rounded bg-white flex justify-between' onClick={() => onclick(leiding.id)}>
             <div className="avatar">
-              <div className="w-20 h-20 rounded">
+              <div className="w-full h-full rounded">
                  <img  src={leiding.image} alt={leiding.firstname + " " + leiding.lastname} ></img>
               </div>
             </div>

@@ -15,7 +15,7 @@ const Rekening = () => {
       if (!user?.id) return;
       try {
         const response = await fetch(`http://localhost:5009/api/rekening/${user.lastname} ${user.firstname}`);
-        const rawData = await response.json();
+        const rawData: string[][] = await response.json();
 
         // Extract relevant rows and columns
         const data = rawData
