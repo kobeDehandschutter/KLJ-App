@@ -1,9 +1,15 @@
+klj-app-408112-5dd80f3e0960.json
+
+
+
 # Logs
 logs
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
 
 # Runtime data
 pids

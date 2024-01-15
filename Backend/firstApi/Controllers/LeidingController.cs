@@ -42,7 +42,7 @@ public class LeidingController : ControllerBase
         string sheetName = "KLJ-APP";
 
         // Specify the range you want to read
-        string range = $"{sheetName}!A4:D27";
+        string range = $"{sheetName}!A4:C27";
 
         // Read data from the specified range
         var request = sheetsService.Spreadsheets.Values.Get(spreadsheetId, range);
@@ -58,7 +58,7 @@ public class LeidingController : ControllerBase
                 {
                     try
                     {
-                        Leiding.Add(new Leiding() { Id = row[0].ToString(), Firstname = row[1].ToString(), Lastname = row[2].ToString(), Image = row[3]?.ToString() });
+                        Leiding.Add(new Leiding() { Id = row[0].ToString(), Firstname = row[1].ToString(), Lastname = row[2].ToString() });
                     }
                     catch (Exception e)
                     {
@@ -98,7 +98,7 @@ public class LeidingController : ControllerBase
         string sheetName = "KLJ-APP";
 
         // Specify the range you want to read
-        string range = $"{sheetName}!A4:D27";
+        string range = $"{sheetName}!A4:C27";
 
         // Read data from the specified range
         var request = sheetsService.Spreadsheets.Values.Get(spreadsheetId, range);
@@ -111,7 +111,7 @@ public class LeidingController : ControllerBase
             {
                 if (row[0].ToString() == id)
                 {
-                    return new Leiding() { Id = row[0].ToString(), Firstname = row[1].ToString(), Lastname = row[2].ToString(), Image = row[3]?.ToString() };
+                    return new Leiding() { Id = row[0].ToString(), Firstname = row[1].ToString(), Lastname = row[2].ToString() };
                 }
             }
         }

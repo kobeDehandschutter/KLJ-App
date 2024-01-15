@@ -16,7 +16,7 @@ const Footer = () => {
   };
 
   return (
-    <div className="btm-nav">
+    <div className="btm-nav relative">
       <button
         type="button"
         className={`bg-donkerblauw text-secondary-content border-lichtBlauw ${pathname === '/settings' && 'active'}`}

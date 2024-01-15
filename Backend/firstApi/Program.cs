@@ -130,9 +130,6 @@ app.MapGet("/excel", () =>
 
 app.MapGet("/", (PersonenContext context) =>
 {
-    Console.WriteLine("here");
-    //var klant = await context.Personen.FirstOrDefaultAsync(p => p.Voornaam == voornaam, ct);
-    //if (klant == null) return Results.NotFound($"Klant with voornaam {voornaam} was not found");
     var kobe = new Leiding
     {
         Id = "1",
@@ -151,13 +148,8 @@ app.MapGet("/", (PersonenContext context) =>
             kobe,
             joren
     };
-    // var  klanten = await context.Leiding.ToListAsync();
     return Results.Ok(leiding);
 
-    //var idList = klanten.Select(k => k.PersoonId).ToList();
-    //var facturen = await context.Set<Factuur>().Where(f => idList.Contains(f.PersoonId)).ToListAsync(ct);
-    //var facturen = await context.Set<Factuur>().Where(f => klanten.Any(k => k.PersoonId == f.PersoonId)).ToListAsync(ct); //Error in EF6, "works" in older versions
-    // return Results.Ok('klanten');
 
 });
 app.Run();
@@ -169,32 +161,14 @@ public class PersonenContext : DbContext
 
     }
     public DbSet<Leiding> Leiding { get; set; }
-
-    //override protected void OnModelCreating(ModelBuilder modelBuilder)
-    //{
-    //    modelBuilder.Entity<Factuur>();
-    //}
-    //public DbSet<Factuur> Facturen { get; set; }
 }
 
-//[Table("Factuur", Schema = "bootcamp")]
-//public class Factuur
-//{
-//    public int FactuurId { get; set; }
-//    public int PersoonId { get; set; }
-//    public string Desc { get; set; }
-//    public decimal Bedrag { get; set; }
-
-//    [NotMapped]
-//    public Leiding Leiding { get; set; }
-//}
 
 [Table("Leiding", Schema = "KLJ")]
 public class Leiding
 {
-    public string Id { get; set; }
+    public string? Id { get; set; }
     public string? Firstname { get; set; }
     public string? Lastname { get; set; }
-    public string? Image { get; set; }
 
 }
