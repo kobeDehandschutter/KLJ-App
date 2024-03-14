@@ -1,0 +1,1 @@
+web: cd Backend && cd firstApi && dotnet run
