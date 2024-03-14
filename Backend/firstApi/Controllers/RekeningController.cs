@@ -18,7 +18,6 @@ public class RekeningController : ControllerBase
     [HttpGet("{name}", Name = "GetrekeningByName")]
     public IEnumerable<IEnumerable<object>> Get(string name)
     {
-        System.Console.WriteLine(name);
         string credentialsPath = "../klj-app-408112-5dd80f3e0960.json";
 
         // Replace with the ID of your Google Sheets document

@@ -28,19 +28,18 @@ const Home = () => {
     setToastText(textPossibilities[Math.floor(Math.random()*textPossibilities.length)])
     
     try {
+      
+      setShowToast(true);
+
+      const toastDuration = 1000;
+      
+      setTimeout(() => {
+        setShowToast(false);
+      }, toastDuration);
+
+
       const postResult = await axios.post(`http://localhost:5009/api/streepjes/${user?.id}`);
       
-      // If the post was successful, show the Toast and set a timer to hide it
-      if (postResult.status === 200) {
-        setShowToast(true);
-
-        // Set the duration for which Toast will be visible (e.g., 3000 milliseconds = 3 seconds)
-        const toastDuration = 2000;
-        
-        setTimeout(() => {
-          setShowToast(false);
-        }, toastDuration);
-      }
     } catch (error) {
       console.error('Error during axios.post:', error);
     } finally {
